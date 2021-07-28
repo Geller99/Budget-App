@@ -1,0 +1,2 @@
+
+export const WITHDRAW = 'WITHDRAW_TRANSACTION';

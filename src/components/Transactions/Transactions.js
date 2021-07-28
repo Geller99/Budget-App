@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from 'react';
 import { useState } from 'react';
-import GlobalContext from './../Context/Context';
+import GlobalContext from '../../Context/Context';
 
 
 /* 

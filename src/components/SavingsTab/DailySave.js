@@ -1,5 +1,5 @@
 import React , { useContext, useState, useEffect} from "react";
-import GlobalContext from './../Context/Context';
+import GlobalContext from '../../Context/Context';
 
 
 function DailySave({transactionList}) {

@@ -1,28 +1,24 @@
-import React, {useState } from "react";
-import "./App.css";
+import React from "react";
+import "./main.css";
 import NavBarPartA from './components/NavBarPartA';
 import NavBarPartB from './components/NavBarPartB';
-import UserInput from './components/UserInput';
-import FinanceChart from './components/FinanceChart';
-import UserCard from "./components/UserCard";
-import DailySave from "./components/DailySave";
-import DailyBudget from "./components/DailyBudget";
-import WeatherCard from './components/WeatherCard';
-import SocialsTab from './components/SocialsTab';
-import GlobalContext from './Context/Context';
+
+// import GlobalContext from './context/Context';
+import { Provider } from "react-redux";
+import store from './store/store';
+import WeatherCard from './components/WeatherTab/WeatherCard';
+import SocialsTab from './components/SocialsTab/SocialsTab';
+import DailyBudget from './components/BudgetTab/DailyBudget';
+
 
 
 
 const App = () => {
 
-  
-
-  const [transaction, setTransaction] = useState([])
-
-  const transactionList = [];
 
     return (
-      <GlobalContext.Provider value = {transactionList} >
+        <Provider store = {store}>
+
       <div className="wrapper">
 
       
@@ -33,17 +29,14 @@ const App = () => {
         </div>
 
         <div className="container">
-
+            
 
            <div className="container__col1">
-              <UserInput transaction = {transaction} setTransaction = {setTransaction} />
-              <FinanceChart/>
-              <UserCard/>
+           
           </div>
 
             <div className="container__col2">
-               <DailySave  transaction = {transaction}  />
-               <DailyBudget/>
+            <DailyBudget/>
 
             </div>
         
@@ -57,7 +50,8 @@ const App = () => {
 
 
       </div>
-      </GlobalContext.Provider>
+
+       </Provider>
     );
   }
 
